@@ -12,7 +12,6 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -20,67 +19,63 @@
 	<div class="head">
 		<i class="fa fa-sort-amount-asc" aria-hidden="true"></i> 2048 | 数字方块
 	</div>
-	<div class="banner">
-		<a href="https://github.com/taketimeasafriend/ztype" target="view_window" class="myButton"><i class="fa fa-github"></i> - Fork on Github - </a>
-		<a href="http://ogudt6aal.bkt.clouddn.com/image/Wechat.png" target="view_window" class="myButton-weixin" onmouseover="this.className = 'myButton-weixin on';" onmouseout="this.className = 'myButton-weixin';">
-			<i class="fa fa-usd"></i>
-			 - 打赏 -
-			 <div class="weixin_nr">
-					 <div class="arrow"></div>
-					 <img src="images/Wechat.png" width="300" height="300" />
-					 🙏谢谢少侠，有机会请你吃甜筒🍦
-			 </div>
-		 </a>
-	</div>
-	<div class="info">
-		<h1>ZTYPE 说明</h1>
-		Z-Type 是一款以 HTML 5 为开发基础的射击游戏，而要射击的目标就是由上往下掉的英文单词里的英文字母，在英文单词落地前，必须全部消灭才能过关。（界面可能会看到广告，无视它直接点击下面绿色 “Play ZType” 按钮开始游戏）
-		<p>🔘new game: 开始新游戏</p>
-	</div>
-
-	<div class="container">
-		<div class="directions">
-			<p><strong>如何玩：</strong> 使用鼠标方向键键移动数字方块。相邻的两个方块数字相同，它们可合并成一个！</p>
+	<div id='canvas'>
+		<div class="banner">
+			<a href="https://github.com/taketimeasafriend/2048" target="view_window" class="myButton"><i class="fa fa-github"></i> - Fork on Github - </a>
+			<a href="http://ogudt6aal.bkt.clouddn.com/image/Wechat.png" target="view_window" class="myButton-weixin" onmouseover="this.className = 'myButton-weixin on';" onmouseout="this.className = 'myButton-weixin';">
+				<i class="fa fa-usd"></i> - 打赏 -
+				<div class="weixin_nr">
+					<div class="arrow"></div>
+					<img src="images/Wechat.png" width="300" height="300" /> 🙏谢谢少侠，有机会请你吃甜筒🍦
+				</div>
+			</a>
 		</div>
-		<div class="scores">
-			<div class="score-container best-score">
-				最佳:
-				<div class="score">
-					<div id="bestScore">0</div>
+		<div class="help">
+			<h1>2048 说明</h1>
+			<ul>
+				<li>使用键盘方向键移动数字方块。</li>
+				<li>移动过程中若某方向相邻的两个方块数字相同，则它们合并为一个。</li>
+				<li>移动过程中合并的两个方块数字相加，得到新块。</li>
+				<li>直至无法合并数字块时，游戏结束。</li>
+				<li>每次合并得到的新块数字即为此步所得分数。</li>
+			</ul>
+		</div>
+
+		<div class="container">
+			<div class="scores">
+				<div class="score-container best-score">
+					最佳:
+					<div class="score">
+						<div id="bestScore">0</div>
+					</div>
+				</div>
+				<div class="score-container">
+					分数:
+					<div class="score">
+						<div id="score">0</div>
+						<div class="add" id="add"></div>
+					</div>
 				</div>
 			</div>
-			<div class="score-container">
-				分数:
-				<div class="score">
-					<div id="score">0</div>
-					<div class="add" id="add"></div>
-				</div>
+			<div class="game">
+				<div id="tile-container" class="tile-container"></div>
+				<div class="end" id="end">游戏结束
+					<div class="monkey">🙈</div><button class="btn not-recommended__item js-restart-btn" id="try-again">再试一次</button></div>
+			</div>
+			<div class="not-recommended">
+				<button class="btn not-recommended__item js-restart-btn" id="restart">重新启动游戏</button>
+				<span class="not-recommended__annotation"></span>
 			</div>
 		</div>
-		<div class="game">
-			<div id="tile-container" class="tile-container"></div>
-			<div class="end" id="end">游戏结束
-				<div class="monkey">🙈</div><button class="btn not-recommended__item js-restart-btn" id="try-again">再试一次</button></div>
-		</div>
-
-		<div class="not-recommended">
-			<button class="btn not-recommended__item js-restart-btn" id="restart">重新启动游戏</button>
-			<span class="not-recommended__annotation"></span>
-		</div>
-
 	</div>
 
 	<script src="js/index.js"></script>
 	<!--页脚-->
 	<div class="foot">
-		<a href="http://51world.win" target="view_window"><i class="fa fa-home"></i>主页</a>
-		 -
-		<a href="https://github.com/taketimeasafriend" target="view_window"><i class="fa fa-github"></i>Github</a>
-		 -
-		<a href="http://weibo.com/miaoxiaogege" target="view_window"><i class="fa fa-weibo"></i>微博</a>
-		 -
-		<a href="http://ogudt6aal.bkt.clouddn.com/image/whynotwangwei.jpeg" target="view_window"><i class="fa fa-weixin"></i>微信</a>
-		 -
+		<a href="http://51world.win" target="view_window"><i class="fa fa-home"></i>主页</a> -
+		<a href="https://github.com/taketimeasafriend" target="view_window"><i class="fa fa-github"></i>Github</a> -
+		<a href="http://weibo.com/miaoxiaogege" target="view_window"><i class="fa fa-weibo"></i>微博</a> -
+		<a href="http://ogudt6aal.bkt.clouddn.com/image/whynotwangwei.jpeg" target="view_window"><i class="fa fa-weixin"></i>微信</a> -
 		<a href="mailto:taketimeasafriend@gmail.com?subject=I%20want%20to%20say%20&body=Hello%20"><i class="fa fa-envelope"></i>邮箱</a>
 	</div>
 </body>
