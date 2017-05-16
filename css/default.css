@@ -112,4 +112,5 @@ body {
 
 .myButton-weixin.on .weixin_nr {
     display: block;
+    z-index: 99;
 }
