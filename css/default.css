@@ -56,9 +56,11 @@ body {
     font-size: 1.8em;
     text-align: center;
 }
-
 .help li {
     margin-left: -25px;
+}
+.help p {
+    text-align: center;
 }
 
 .myButton-weixin {
